@@ -9,6 +9,6 @@ public class UniversalClockView implements View{
 	
 	@Override
 	public void showTime(LocalTime time) {
-		
+		//Format seconde
 	}
 }

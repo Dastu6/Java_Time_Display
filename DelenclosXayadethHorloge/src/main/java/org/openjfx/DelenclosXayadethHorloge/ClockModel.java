@@ -7,6 +7,7 @@ public class ClockModel {
 	private LocalTime clockHour;
 	private enum Type{CPU,INTERNAL,EXTERNAL};
 	private Type clockType;
+	private String typeLink;
 	
 	public ClockModel() {
 		this.clockHour = LocalTime.from(LocalTime.now());
@@ -39,6 +40,14 @@ public class ClockModel {
 		this.clockType = clockType;
 	}
 	
+	public String getTypeLink() {
+		return this.typeLink;
+	}
+	
+	public void setTypeLink(String link) {
+		this.typeLink = link;
+	}
+	
 	//En fonction du type d'horloge, les heures seront différentes
 	public LocalTime getCurrentTime() {
 		switch(this.clockType) {
@@ -47,6 +56,7 @@ public class ClockModel {
 		case INTERNAL:
 			return LocalTime.now();
 		case EXTERNAL:
+			//En fonction de la valeur de typeLink
 			return LocalTime.now();
 		}
 		return LocalTime.now();

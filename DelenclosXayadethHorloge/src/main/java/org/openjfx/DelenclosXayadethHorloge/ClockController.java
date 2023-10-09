@@ -21,10 +21,13 @@ public class ClockController {
 	
 	public void updateMinuteTask() {
 		this.cModel.setClockHour(this.cModel.getCurrentTime());
+		UniversalClockView uniV = new UniversalClockView();
+		uniV.showTime(this.cModel.getClockHour());
 	}
 	
 	public void updateTimeTask() {
 		this.cModel.setClockHour(this.cModel.getCurrentTime());
-		
+		EnglishClockView engV = new EnglishClockView();
+		engV.showTime(this.cModel.getClockHour());
 	}
 }

@@ -39,8 +39,16 @@ public class ClockModel {
 		this.clockType = clockType;
 	}
 	
-	//Permet de directement récupérer l'heure actuelle selon la librairie LocalTime
+	//En fonction du type d'horloge, les heures seront différentes
 	public LocalTime getCurrentTime() {
+		switch(this.clockType) {
+		case CPU:
+			return LocalTime.now();
+		case INTERNAL:
+			return LocalTime.now();
+		case EXTERNAL:
+			return LocalTime.now();
+		}
 		return LocalTime.now();
 	}
 	
